@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sukhano? · Coming soon</title>
+<meta name="description" content="Sukhano is a not-for-profit helping residents' associations build neighbourhood volunteer networks for community health: by the community, for the community. Coming soon.">
+<meta property="og:title" content="sukhano?">
+<meta property="og:description" content="Neighbourhoods taking charge of their own health. By the community, for the community. Coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Noto+Serif+Malayalam:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F5EFE3; --ink:#1E3A33; --muted:#4A5E57; --accent:#B5561F; --field:#FFFDF8; --rule:#C9BFAE;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#16241F; --ink:#EFE8DA; --muted:#AFC0B8; --accent:#E08A55; --field:#1E302A; --rule:#34473F;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#16241F; --ink:#EFE8DA; --muted:#AFC0B8; --accent:#E08A55; --field:#1E302A; --rule:#34473F;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; min-height:100%;
+  background:var(--ground); color:var(--ink);
+  font-family:'Work Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.page{
+  min-height:100vh; min-height:100svh;
+  max-width:1200px; margin:0 auto;
+  padding:clamp(24px,4vw,48px) clamp(22px,6vw,88px);
+  display:flex; flex-direction:column; justify-content:space-between; gap:40px;
+}
+header{display:flex; justify-content:space-between; align-items:center; gap:16px}
+.mark{font-family:Fraunces,Georgia,serif; font-weight:600; font-size:clamp(19px,2vw,24px); letter-spacing:-0.01em}
+.mark span{color:var(--accent)}
+.status{
+  display:inline-flex; align-items:center; gap:9px;
+  padding:7px 14px; border:1.5px solid var(--ink); border-radius:999px;
+  font-size:clamp(12px,1.2vw,14px); font-weight:500; white-space:nowrap;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .dot{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+}
+main{display:flex; flex-direction:column; gap:18px}
+.kicker{font-size:15px; color:var(--muted); margin:0}
+h1{
+  margin:0; font-family:Fraunces,Georgia,serif; font-style:italic; font-weight:500;
+  font-size:clamp(76px,15vw,196px); line-height:.92; letter-spacing:-0.03em;
+}
+h1 .q{font-style:normal}
+.greet{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; font-size:clamp(19px,2vw,22px); min-height:1.6em}
+.ml{font-family:'Noto Serif Malayalam',serif}
+.rot{font-family:Fraunces,Georgia,serif; font-style:italic; transition:opacity .35s ease}
+.lang{font-size:13px; color:var(--muted); letter-spacing:.04em}
+.lede{margin:10px 0 0; max-width:40ch; font-size:clamp(15px,1.4vw,17px); line-height:1.6}
+.lede strong{font-weight:600}
+footer{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:28px}
+.join p{margin:0 0 12px; font-size:15px; font-weight:500}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:52px; padding:0 26px; border-radius:10px;
+  background:var(--ink); color:var(--ground); text-decoration:none;
+  font-size:16px; font-weight:600;
+}
+.btn:hover{opacity:.9}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+.meta{font-size:14px; color:var(--muted); text-align:right; line-height:1.7}
+.meta .code{color:var(--ink); font-weight:600}
+.meta a{color:var(--ink); font-weight:500}
+@media (max-width:640px){
+  footer{flex-direction:column; align-items:stretch; padding-top:4px}
+  .btn{width:100%}
+  .meta{text-align:left; border-top:1px solid var(--rule); padding-top:18px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="mark">sukhano<span>.</span>life</div>
+    <div class="status"><span class="dot" aria-hidden="true"></span>Coming soon</div>
+  </header>
+
+  <main>
+    <p class="kicker">A greeting from next door</p>
+    <h1>sukhano<span class="q">?</span></h1>
+    <div class="greet">
+      <span class="ml" lang="ml">സുഖമാണോ?</span>
+      <span aria-live="polite"><span class="rot" id="rot">How are you?</span> <span class="lang" id="lang">English</span></span>
+    </div>
+    <p class="lede">It's the question neighbours ask each other every day. Sukhano is a not-for-profit helping residents' associations build networks of volunteers who take charge of their neighbourhood's health, <strong>by the community, for the community</strong>. We're getting things ready and will be here soon.</p>
+  </main>
+
+  <footer>
+    <div class="join">
+      <p>Want your neighbourhood to be among the first?</p>
+      <a class="btn" href="mailto:hello@sukhano.life?subject=Keep%20me%20posted%20about%20Sukhano">Keep me posted</a>
+    </div>
+    <div class="meta">
+      <div class="code">Inspire, empower, practise</div>
+      <div><a href="mailto:hello@sukhano.life">hello@sukhano.life</a></div>
+      <div>© 2026 Sukhano</div>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var g=[['How are you?','English'],['Kaise ho?','Hindi'],['Eppadi irukkeenga?','Tamil'],['Hegiddira?','Kannada'],['Ela unnaru?','Telugu'],['Kemon acho?','Bengali'],['Kasa aahat?','Marathi']];
+  var i=0, r=document.getElementById('rot'), l=document.getElementById('lang');
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setInterval(function(){
+    i=(i+1)%g.length;
+    if(still){r.textContent=g[i][0];l.textContent=g[i][1];return;}
+    r.style.opacity=0;
+    setTimeout(function(){r.textContent=g[i][0];l.textContent=g[i][1];r.style.opacity=1;},350);
+  },2800);
+})();
+</script>
+</body>
+</html>
